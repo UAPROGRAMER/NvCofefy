@@ -1,3 +1,7 @@
+local function ntc(num)
+    return vim.fn.nr2char(num)
+end
+
 return {
     'folke/which-key.nvim',
     event = 'VimEnter',
@@ -37,7 +41,9 @@ return {
             },
         },
         spec = {
-            { '<leader>f', group = '[F]ind' },
+            { '<leader>f', group = ntc(0xf002)..' [F]ind' },
+            { '<leader>c', group = ntc(0xe64e)..' [C]ode' },
+            { '<leader>g', group = ntc(0xf0ec)..' [G]oto' }
         },
 --[[
         spec = {
