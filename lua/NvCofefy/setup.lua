@@ -4,16 +4,13 @@ vim.g.maplocalleader = "\\"
 vim.g.have_nerd_font = true
 
 vim.opt.number = true
+vim.opt.relativenumber = true
 
 vim.opt.mouse = "a"
 
 vim.opt.showmode = false
 
-vim.schedule(
-    function()
-        vim.opt.clipboard = "unnamedplus"
-    end
-)
+vim.opt.clipboard = "unnamedplus"
 
 vim.opt.breakindent = true
 
@@ -35,6 +32,7 @@ vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 vim.opt.inccommand = 'split'
+vim.opt.incsearch = true
 
 vim.opt.cursorline = true
 
@@ -42,7 +40,10 @@ vim.opt.scrolloff = 15
 
 vim.opt.termguicolors = true
 
+vim.opt.wrap = true
+
 vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smarttab = true
