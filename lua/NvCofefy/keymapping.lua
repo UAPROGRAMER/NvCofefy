@@ -18,6 +18,8 @@ vim.keymap.set('n', '<S-Tab>', '<cmd>bprevious<CR>', { desc = 'Prev buffer' })
 vim.keymap.set('v', '<Tab>', '>gv', { desc = 'Add tabulation' })
 vim.keymap.set('v', '<S-Tab>', '<gv', { desc = 'Remove tabulation' })
 
+vim.keymap.set('n', '<Esc>', 'bd', { desc = "Close current buffer" })
+
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
