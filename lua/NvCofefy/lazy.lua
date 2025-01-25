@@ -8,19 +8,15 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 		"--filter=blob:none",
 		"--branch=stable",
 		lazyrepo,
-		lazypath
+		lazypath,
 	})
 
 	if vim.v.shell_error ~= 0 then
-		vim.api.nvim_echo(
-			{
-				{"[ err ] Failed to install lazy.vim:\n", "Error"},
-				{out, "ErrorMsg"},
-				{"\n[ inf ] Press any key to exit...\n", "Normal"}
-			},
-			true,
-			true
-		)
+		vim.api.nvim_echo({
+			{ "[ err ] Failed to install lazy.vim:\n", "Error" },
+			{ out, "ErrorMsg" },
+			{ "\n[ inf ] Press any key to exit...\n", "Normal" },
+		}, true, {})
 
 		vim.fn.getchar()
 		os.exit(1)
@@ -31,5 +27,5 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	spec = "NvCofefy.plugins",
-	change_detection = { notify = false }
+	change_detection = { notify = false },
 })
